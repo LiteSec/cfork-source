@@ -129,10 +129,10 @@ public:
 	genesis.nNonce = 399062;
 
         hashGenesisBlock = genesis.GetHash();
-		printf("genesis.GetHash = %s\n", genesis.GetHash().ToString().c_str());
-		printf("genesis.hashMerkleRoot = %s\n", genesis.hashMerkleRoot.ToString().c_str());
-		assert(hashGenesisBlock == uint256("0x5897bcdc2575a8b4a684d81a0d805f2e89749c91e1c5d9f65732eb81905bc830"));
-		assert(genesis.hashMerkleRoot == uint256("0x437a826ae72cee4af5d4616a36d83ce543176d4eb889752a3eb1783de4219fe5"));
+		printf("%s\n", genesis.GetHash().ToString().c_str());
+		printf("%s\n", genesis.hashMerkleRoot.ToString().c_str());
+		assert(hashGenesisBlock == uint256("cfork.litesec.genesis_hash"));
+		assert(genesis.hashMerkleRoot == uint256("cfork.litesec.merkle_hash"));
 
 		vSeeds.push_back(CDNSSeedData("cfork.litesec.vseed", "cfork.litesec.vseed"));
 
