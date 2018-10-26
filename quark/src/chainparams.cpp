@@ -129,12 +129,12 @@ public:
 	genesis.nNonce = 399062;
 
         hashGenesisBlock = genesis.GetHash();
-		printf("%s\n", genesis.GetHash().ToString().c_str());
-		printf("%s\n", genesis.hashMerkleRoot.ToString().c_str());
-		assert(hashGenesisBlock == uint256("cfork.litesec.genesis_hash"));
-		assert(genesis.hashMerkleRoot == uint256("cfork.litesec.merkle_hash"));
+	printf("%s\n", genesis.GetHash().ToString().c_str());
+	printf("%s\n", genesis.hashMerkleRoot.ToString().c_str());
+	// assert(hashGenesisBlock == uint256("cfork.litesec.genesis_hash"));
+	// assert(genesis.hashMerkleRoot == uint256("cfork.litesec.merkle_hash"));
 
-		vSeeds.push_back(CDNSSeedData("cfork.litesec.vseed", "cfork.litesec.vseed"));
+	vSeeds.push_back(CDNSSeedData("cfork.litesec.vseed", "cfork.litesec.vseed"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, cfork.litesec.mprefix);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 8);
