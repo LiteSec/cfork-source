@@ -128,9 +128,7 @@ public:
 	genesis.nBits = cfork.litesec.mainnet_bits;
 	genesis.nNonce = cfork.litesec.mainnet_nonce;
 
-        hashGenesisBlock = genesis.GetHash();
-	printf("%s\n", genesis.GetHash().ToString().c_str());
-	printf("%s\n", genesis.hashMerkleRoot.ToString().c_str());
+        hashGenesisBlock = genesis.GetHash();;
 	assert(hashGenesisBlock == uint256("0xcfork.litesec.mainnet_genhash"));
 	assert(genesis.hashMerkleRoot == uint256("0xcfork.litesec.mainnet_mrklroot"));
 
