@@ -131,8 +131,8 @@ public:
         hashGenesisBlock = genesis.GetHash();
 	printf("%s\n", genesis.GetHash().ToString().c_str());
 	printf("%s\n", genesis.hashMerkleRoot.ToString().c_str());
-	assert(hashGenesisBlock == uint256("cfork.litesec.mainnet_genhash"));
-	assert(genesis.hashMerkleRoot == uint256("cfork.litesec.mainnet_mrklroot"));
+	assert(hashGenesisBlock == uint256("0xcfork.litesec.mainnet_genhash"));
+	assert(genesis.hashMerkleRoot == uint256("0xcfork.litesec.mainnet_mrklroot"));
 
 	vSeeds.push_back(CDNSSeedData("cfork.litesec.vseed", "cfork.litesec.vseed"));
 
@@ -205,7 +205,7 @@ public:
 		genesis.nNonce = cfork.litesec.testnet_nonce;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("cfork.litesec.testnet_genhash"));
+        assert(hashGenesisBlock == uint256("0xcfork.litesec.testnet_genhash"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -273,7 +273,7 @@ public:
 
         hashGenesisBlock = genesis.GetHash();
         nDefaultPort = 39793;
-        assert(hashGenesisBlock == uint256("cfork.litesec.regtest_genhash"));
+        assert(hashGenesisBlock == uint256("0xcfork.litesec.regtest_genhash"));
 
         vFixedSeeds.clear(); //! Testnet mode doesn't have any fixed seeds.
         vSeeds.clear();      //! Testnet mode doesn't have any DNS seeds.
