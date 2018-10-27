@@ -119,20 +119,20 @@ public:
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 486604799 << CScriptNum(4) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
         txNew.vout[0].nValue = 50 * COIN;
-        txNew.vout[0].scriptPubKey = CScript() << ParseHex("04a21d2738e2ec20ede37104e3215ceccb8726094f8ec7477ce3ef67e87e3c26520211bf4467e8bd128888b8cde6d611c5c0564d08f92c602892ef0403c4aa7a3a") << OP_CHECKSIG;
+        txNew.vout[0].scriptPubKey = CScript() << ParseHex("cfork.litesec.mainnet_pubkey") << OP_CHECKSIG;
         genesis.vtx.push_back(txNew);
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-	genesis.nTime = cfork.litesec.genesis_time;
-	genesis.nBits = 504365040;
-	genesis.nNonce = 399062;
+	genesis.nTime = cfork.litesec.mainnet_time;
+	genesis.nBits = cfork.litesec.mainnet_bits;
+	genesis.nNonce = cfork.litesec.mainnet_nonce;
 
         hashGenesisBlock = genesis.GetHash();
 	printf("%s\n", genesis.GetHash().ToString().c_str());
 	printf("%s\n", genesis.hashMerkleRoot.ToString().c_str());
-	// assert(hashGenesisBlock == uint256("cfork.litesec.genesis_hash"));
-	// assert(genesis.hashMerkleRoot == uint256("cfork.litesec.merkle_hash"));
+	assert(hashGenesisBlock == uint256("cfork.litesec.mainnet_genhash"));
+	assert(genesis.hashMerkleRoot == uint256("cfork.litesec.mainnet_mrklroot"));
 
 	vSeeds.push_back(CDNSSeedData("cfork.litesec.vseed", "cfork.litesec.vseed"));
 
@@ -201,11 +201,11 @@ public:
         nMaxMoneyOut = 43199500 * COIN;
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
-		genesis.nTime = 1535176904;
-		genesis.nNonce = 1115332;
+		genesis.nTime = cfork.litesec.testnet_time;
+		genesis.nNonce = cfork.litesec.testnet_nonce;
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x6d205c0dd5ca55002cfaf4464037a91af65a7968172a4ce3c1d952e87fa2246b"));
+        assert(hashGenesisBlock == uint256("cfork.litesec.testnet_genhash"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -267,13 +267,13 @@ public:
         nTargetSpacing = 1 * 60;        // cfork.litesec.name.cap: 1 minutes
         bnProofOfWorkLimit = ~uint256(0) >> 1;
 		bnProofOfWorkLimit = ~uint256(0) >> 1;
-		genesis.nTime = 1535176904;
-		genesis.nBits = 504365040;
-		genesis.nNonce = 1115332;
+		genesis.nTime = cfork.litesec.regtest_time;
+		genesis.nBits = cfork.litesec.regtest_bits;
+		genesis.nNonce = cfork.litesec.regtest_nonce;
 
         hashGenesisBlock = genesis.GetHash();
         nDefaultPort = 39793;
-        assert(hashGenesisBlock == uint256("0x6d205c0dd5ca55002cfaf4464037a91af65a7968172a4ce3c1d952e87fa2246b"));
+        assert(hashGenesisBlock == uint256("cfork.litesec.regtest_genhash"));
 
         vFixedSeeds.clear(); //! Testnet mode doesn't have any fixed seeds.
         vSeeds.clear();      //! Testnet mode doesn't have any DNS seeds.
