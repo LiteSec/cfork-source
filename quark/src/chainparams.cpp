@@ -113,7 +113,7 @@ public:
         nModifierUpdateBlock = 1;
         nMaxMoneyOut = 20000000 * COIN;
 
-        const char* pszTimestamp = "cfork.litesec.genesis_timestamp";
+        const char* pszTimestamp = "cfork.litesec.mainnet_timestamp";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
