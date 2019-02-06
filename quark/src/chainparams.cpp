@@ -109,9 +109,9 @@ public:
         nLastPOWBlock = 200;
         nMaturity = 10;
         nMasternodeCountDrift = 20;
-		nMasternodeCollateralAmt = 1000; //masternode collateral 10k coins      
+	nMasternodeCollateralAmt = cfork.litesec.masternode_col; //masternode collateral 10k coins      
         nModifierUpdateBlock = 1;
-        nMaxMoneyOut = 20000000 * COIN;
+        nMaxMoneyOut = cfork.litesec.maxsupply * COIN;
 
         const char* pszTimestamp = "cfork.litesec.mainnet_timestamp";
         CMutableTransaction txNew;
@@ -194,9 +194,9 @@ public:
         nLastPOWBlock = 200;
         nMaturity = 15;
         nMasternodeCountDrift = 4;
-        nMasternodeCollateralLimit = 10000;
+        nMasternodeCollateralLimit = cfork.litesec.masternode_col;
         nModifierUpdateBlock = 51197; //approx Mon, 17 Apr 2017 04:00:00 GMT
-        nMaxMoneyOut = 43199500 * COIN;
+        nMaxMoneyOut = cfork.litesec.maxsupply * COIN;
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
 		genesis.nTime = cfork.litesec.testnet_time;
