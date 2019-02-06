@@ -1624,58 +1624,58 @@ int64_t GetBlockValue(int nHeight)
 		nSubsidy = 0 * COIN; //Genesis             
 	}
 	else if (nHeight < 50 && nHeight > 0) { //Premine phase 200,000 coins in this phase 4k coins each block for 50 blocks
-		nSubsidy = 4000 * COIN;
+		nSubsidy = cfork.litesec.premine_amt * COIN;
 	}
 	else if (nHeight < 200 && nHeight > 50) { //PoW stage no reward for it
 		nSubsidy = 0 * COIN;
 	}
 	else if (nHeight < 20000 && nHeight > 201) {
-		nSubsidy = 2 * COIN;
+		nSubsidy = cfork.litesec.rewper1 * COIN;
 	}
 	else if (nHeight < 40000 && nHeight > 20001) {
-		nSubsidy = 6 * COIN;
+		nSubsidy = cfork.litesec.rewper2 * COIN;
 	}
 	else if (nHeight < 60000 && nHeight > 40001) {
-		nSubsidy = 8 * COIN;
+		nSubsidy = cfork.litesec.rewper3 * COIN;
 	}
 	else if (nHeight < 80000 && nHeight > 60001) {
-		nSubsidy = 10 * COIN;
+		nSubsidy = cfork.litesec.rewper4 * COIN;
 	}
 	else if (nHeight < 100000 && nHeight > 80001) {
-		nSubsidy = 11 * COIN;
+		nSubsidy = cfork.litesec.rewper5 * COIN;
 	}
 	else if (nHeight < 120000 && nHeight > 100001) {
-		nSubsidy = 12 * COIN;
+		nSubsidy = cfork.litesec.rewper6 * COIN;
 	}
 	else if (nHeight < 140000 && nHeight > 120001) {
-		nSubsidy = 13 * COIN;
+		nSubsidy = cfork.litesec.rewper7 * COIN;
 	}
 	else if (nHeight < 160000 && nHeight > 140001) {
-		nSubsidy = 15 * COIN;
+		nSubsidy = cfork.litesec.rewper8 * COIN;
 	}
 	else if (nHeight < 180000 && nHeight > 160001) {
-		nSubsidy = 16 * COIN;
+		nSubsidy = cfork.litesec.rewper9 * COIN;
 	}
 	else if (nHeight < 200000 && nHeight > 180001) {
-		nSubsidy = 17 * COIN;
+		nSubsidy = cfork.litesec.rewper10 * COIN;
 	}
 	else if (nHeight < 220000 && nHeight > 200001) {
-		nSubsidy = 15 * COIN;
+		nSubsidy = cfork.litesec.rewper11 * COIN;
 	}
 	else if (nHeight < 240000 && nHeight > 220001) {
-		nSubsidy = 14 * COIN;
+		nSubsidy = cfork.litesec.rewper12 * COIN;
 	}
 	else if (nHeight < 260000 && nHeight > 240001) {
-		nSubsidy = 13 * COIN;
+		nSubsidy = cfork.litesec.rewper13 * COIN;
 	}
 	else if (nHeight < 280000 && nHeight > 260001) {
-		nSubsidy = 12 * COIN;
+		nSubsidy = cfork.litesec.rewper14 * COIN;
 	}
 	else if (nHeight < 300000 && nHeight > 280001) {
-		nSubsidy = 11 * COIN;
+		nSubsidy = cfork.litesec.rewper15 * COIN;
 	}
 	else if (nHeight < 300001) { //Till max supply 
-		nSubsidy = 10 * COIN;
+		nSubsidy = cfork.litesec.rewper16 * COIN;
 	}
 	int64_t nMoneySupply = chainActive.Tip()->nMoneySupply;
 
