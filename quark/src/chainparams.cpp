@@ -109,7 +109,7 @@ public:
         nLastPOWBlock = 200;
         nMaturity = 10;
         nMasternodeCountDrift = 20;
-	nMasternodeCollateralAmt = cfork.litesec.masternode_col; //masternode collateral 10k coins      
+	nMasternodeCollateralAmt = cfork.litesec.masternode_col;   
         nModifierUpdateBlock = 1;
         nMaxMoneyOut = cfork.litesec.maxsupply * COIN;
 
@@ -139,24 +139,23 @@ public:
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 179);
         base58Prefixes[EXT_PUBLIC_KEY] = boost::assign::list_of(0x02)(0x2D)(0x25)(0x33).convert_to_container<std::vector<unsigned char> >();
         base58Prefixes[EXT_SECRET_KEY] = boost::assign::list_of(0x02)(0x21)(0x31)(0x2B).convert_to_container<std::vector<unsigned char> >();
-        // 	BIP44 coin type is from https://github.com/satoshilabs/slips/blob/master/slip-0044.md
         base58Prefixes[EXT_COIN_TYPE] = boost::assign::list_of(0x80)(0x00)(0x00)(0x77).convert_to_container<std::vector<unsigned char> >();
 
         convertSeed6(vFixedSeeds, pnSeed6_main, ARRAYLEN(pnSeed6_main));
 
         fRequireRPCPassword = true;
-        fMiningRequiresPeers = false;		// default true
+        fMiningRequiresPeers = false;
         fAllowMinDifficultyBlocks = true;
         fDefaultConsistencyChecks = false;
         fRequireStandard = true;
         fMineBlocksOnDemand = false;
-        fSkipProofOfWorkCheck = true;		// default false
+        fSkipProofOfWorkCheck = true;
         fTestnetToBeDeprecatedFieldRPC = false;
         fHeadersFirstSyncingActive = false;
 
         nPoolMaxTransactions = 3;
         //strSporkKey = "0434023c912880a08bde06f12909e46dd1405978d594e31adb6fa13474420e3c24b3425d31ce504e1642e4e1d16d652bdd370be079c5f141a714a1b19d6df7928c";
-		strSporkKey = "025ed2ba163a6f527d68e1c9dae87f063b3d2af78f2fbf3621a55febec47e384f8";
+	strSporkKey = "025ed2ba163a6f527d68e1c9dae87f063b3d2af78f2fbf3621a55febec47e384f8";
         strObfuscationPoolDummyAddress = "D87q2gC9j6nNrnzCsg4aY6bHMLsT9nUhEw";
 		
         nStartMasternodePayments = 1535132981; //Wed, 25 Jun 2014 20:36:16 GMT
@@ -195,12 +194,12 @@ public:
         nMaturity = 15;
         nMasternodeCountDrift = 4;
         nMasternodeCollateralLimit = cfork.litesec.masternode_col;
-        nModifierUpdateBlock = 51197; //approx Mon, 17 Apr 2017 04:00:00 GMT
+        nModifierUpdateBlock = 51197;
         nMaxMoneyOut = cfork.litesec.maxsupply * COIN;
 
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
-		genesis.nTime = cfork.litesec.testnet_time;
-		genesis.nNonce = cfork.litesec.testnet_nonce;
+	genesis.nTime = cfork.litesec.testnet_time;
+	genesis.nNonce = cfork.litesec.testnet_nonce;
 
         hashGenesisBlock = genesis.GetHash();
         assert(hashGenesisBlock == uint256("0xcfork.litesec.testnet_genhash"));
@@ -232,7 +231,7 @@ public:
         nPoolMaxTransactions = 2;
         strSporkKey = "04348C2F50F90267E64FACC65BFDC9D0EB147D090872FB97ABAE92E9A36E6CA60983E28E741F8E7277B11A7479B626AC115BA31463AC48178A5075C5A9319D4A38";
         strObfuscationPoolDummyAddress = "y57cqfGRkekRyDRNeJiLtYVEbvhXrNbmox";
-        nStartMasternodePayments = 1535132981; //Fri, 09 Jan 2015 21:05:58 GMT
+        nStartMasternodePayments = 1535132981;
     }
     const Checkpoints::CCheckpointData& Checkpoints() const
     {
