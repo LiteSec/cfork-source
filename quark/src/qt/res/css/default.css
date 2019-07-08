@@ -166,7 +166,7 @@ QLabel { /* Base Text Size & Color */
 /****************************************************************************************/
 
 QPushButton { /* Global Button Style */
-    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: .01 #64ACD2, stop: .1 #494949, stop: .95 #494949, stop: 1 #1D80B5);
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: .01 #494949, stop: .1 #494949, stop: .95 #494949, stop: 1 #494949);
     border: 0;
     border-radius: 3px;
     color: #ffffff;
